@@ -15,6 +15,15 @@ module ActsAsTaggableOn
       acts_as_taggable_on :tags
     end
 
+    def base_model_name
+      model_name
+    end
+
+    def base_model_class
+      model
+    end
+
+
     ##
     # Make a model taggable on specified contexts.
     #

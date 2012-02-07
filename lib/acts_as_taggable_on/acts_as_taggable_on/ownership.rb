@@ -82,7 +82,7 @@ module ActsAsTaggableOn::Taggable
           
             # Find all taggings that belong to the taggable (self), are owned by the owner, 
             # have the correct context, and are removed from the list.
-            old_taggings = ActsAsTaggableOn::Tagging.where(:taggable_id => id, :taggable_type => self.class.base_class.to_s,
+            old_taggings = ActsAsTaggableOn::Tagging.where(:taggable_id => id, :taggable_type => self.class.base_model_class.to_s,
                                                            :tagger_type => owner.class.to_s, :tagger_id => owner.id,
                                                            :tag_id => old_tags, :context => context).all
           
